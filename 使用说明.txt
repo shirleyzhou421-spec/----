@@ -1,0 +1,39 @@
+听书伴眠已接入豆包语音。请先阅读同目录 README.md，用 python3 tts_server.py 启动后再打开 http://127.0.0.1:5173。
+
+灯下伴读 · 页面交互设计版
+
+设计：暖灰绿护眼底色、琥珀微光、宋体书页、夜雨窗灯配图。
+页面：伴读、书架、轻音、我的；适配手机、平板与桌面。
+原始 app_sop.md 与 app.html 均未修改。
+
+可体验：
+- 初见引导与回访直入上次书页；15 本书目筛选。
+- 选中文字问周先生或写随感；本地归档与历史回看。
+- 本地 TXT 导入、分页与位置保存（建议 UTF-8，2MB 以内）。
+- 设备中文人声朗读、段落高亮、字号与暖灯设置。
+- 20 段实时合成声景、音量调节、朗读音量压低、睡眠定时。
+- 夜读总结可编辑、短句开关、深浅两种卡片、实际 PNG 导出。
+- 系统支持时可调用分享；朋友圈可先保存图片再手动分享。
+
+原型边界：
+- 书架为 15 本书目，部分含选读片段，其余为原创导读，非完整书库。
+- 轻音为 Web Audio 合成雨声/环境声与柔和琴音，非已采购的音乐素材。
+- 周先生为明确标注的离线预设回应，未连接大模型。
+- 朗读使用系统人声，未接入商业情感语音；语音识别依浏览器能力与权限。
+- 相伴人数为静态氛围示意；个人记录只在当前浏览器中保存。
+- 网页切入后台的音频行为受系统限制，未承诺原生 APP 后台播放能力。
+
+打开方式：
+1. 单文件版：直接打开同目录交付的“灯下伴读.html”。
+2. 源码版：在解压目录运行 python3 -m http.server 5173 --directory dist
+   浏览器打开 http://localhost:5173
+3. 在线版本使用 Sites 发布，保留默认私密访问。
+
+主要文件：dist/index.html、dist/style.css、dist/app.js、dist/assets/night-reading.jpg。
+
+已验证：四栏导航、15 本书目/3 本散文筛选、20 段声景播放暂停、
+随感归档、卡片实际导出、TXT 分页与刷新恢复、离线夜话。
+
+图像来源：使用内置 image_gen 工具原创生成；未使用 CLI。
+最终提示词：
+Use case: photorealistic-natural. Asset type: wide atmospheric hero photograph for a quiet Chinese bedtime reading app. A softly glowing vintage mushroom table lamp in aged brushed brass, an open clothbound book on a dark walnut desk, ceramic cup, next to a tall rain-streaked window looking into an indistinct midnight garden. Refined cinematic still-life editorial photography, deep warm charcoal and muted dark olive shadows, amber lamplight pooling softly over cream paper. Slight film grain, tactile linen and old wood, moody and peaceful, beautiful understated contemporary literary magazine art direction. Wide landscape composition, lamp and open book in center-right, window on left, generous dark breathing room. No people, no visible legible text, no logos, no harsh lighting, no oversaturated orange. Output landscape 1536x1024.
